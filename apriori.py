@@ -18,7 +18,7 @@ def getL1(C1, minSup):
     L1 = []
     sup1 = []
     for i in listC1:
-        if C1[i] >= minSup*getLine():
+        if C1[i] >= minSup:#*getLine():
             temp = []
             temp.append(i)
             L1.append(temp)
@@ -85,7 +85,7 @@ def getLk(Ck, data, minSup):
                     break
             if flag:
                 cal += 1
-        if cal >= minSup*getLine():
+        if cal >= minSup:#*getLine():
             Lk.append(itemSet)
             sup.append(cal)
     return Lk, sup
@@ -117,12 +117,12 @@ def load():
         for line in f.readlines():
             d.append(line.split())
     return  d
-
+'''
 #获取行数
 def getLine():
      l = len(open("data.txt", "rU").readlines())
      return l
-
+'''
 #输出结果
 def output(element, sup):
     for i, element in enumerate(element):
@@ -132,7 +132,7 @@ def output(element, sup):
         print("\n")
 
 if __name__ == "__main__":
-    minSup = 0.2     #设置最小支持度
+    minSup = 500     #设置最小支持度
     data = load()
     L, sup = apriori(data, minSup)
     output(L, sup)
