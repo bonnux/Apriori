@@ -132,7 +132,7 @@ def output(element, sup):
         print("\n")
 
 if __name__ == "__main__":
-    minSup = 500     #设置最小支持度
+    minSup = 300     #设置最小支持度
     data = load()
     L, sup = apriori(data, minSup)
     output(L, sup)
